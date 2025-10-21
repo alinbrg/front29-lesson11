@@ -1,0 +1,182 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.container {
+	max-width: 1200px;
+	width: 90%;
+	margin: 20px auto;
+}
+img {
+	width: 100%;
+}
+.burger {
+	display: none;
+	flex-direction: column;
+}
+.burger span {
+	width: 25px;
+	height: 3px;
+	background-color: black;
+	margin: 4px 0;
+	border-radius: 2px;
+}
+/* .burger.active span:nth-child(1) {
+	transform: rotate(45deg) translate(5px, 5px);
+}
+.burger.active span:nth-child(2) {
+	opacity: 0;
+}
+.burger.active span:nth-child(3) {
+	transform: rotate(-45deg) translate(5px, -5px);
+} */
+/* header nav {
+	display: none;
+} */
+header ul {
+	display: flex;
+	gap: 5px;
+	list-style: none;
+}
+header {
+	padding: 20px 0;
+}
+.header-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.box {
+	width: 100%;
+	height: 200px;
+	background-color: red;
+	border: 1px solid black;
+}
+.box img {
+	height: 100%;
+}
+.wrapper {
+	/* display: flex;
+	flex-wrap: wrap;
+	justify-content: center; */
+	background-color: darkblue;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.cards-wrapper {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+}
+
+.card {
+	background-color: lightseagreen;
+}
+.card div {
+	padding: 10px;
+}
+
+/* @media(min-width: 768px){
+  header {
+		background-color: lightgreen;
+	}
+}
+
+@media(min-width: 1024px){
+  header {
+    background-color: lightpink;
+  }
+  header nav {
+    display: block;
+  }
+  .burger {
+    display: none;
+  }
+} */
+
+/* < 1024 */
+/* @media (max-width: 1024px) and (min-width: 769px) {
+	header {
+		background-color: lightpink;
+	}
+} */
+@media (768px < width < 1024px) {
+	header {
+		background-color: lightpink;
+	}
+}
+@media (width < 1024px) {
+	.cards-wrapper {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* <768 */
+@media (max-width: 768px) {
+	/* header {
+		background-color: lightgreen;
+	} */
+	.burger {
+		display: flex;
+	}
+	header nav {
+		display: none;
+	}
+	.cards-wrapper {
+		grid-template-columns: 1fr;
+	}
+	.card {
+		position: relative;
+		background-color: transparent;
+	}
+	.card div {
+		position: absolute;
+		bottom: 0;
+		background: rgba(0, 0, 0, 0.5);
+		color: white;
+		width: 100%;
+	}
+	.card img {
+		height: 200px;
+		object-fit: cover;
+	}
+}
+
+/* @media (height < 500px) {
+	body {
+		background-color: lightgray;
+	}
+} */
+
+/* @media (orientation: landscape) {
+	body {
+		background-color: lightyellow;
+	}
+}
+@media (orientation: portrait) {
+	body {
+		background-color: lightsteelblue;
+	}
+} */
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: black;
+		color: white;
+	}
+	header a {
+		color: white;
+	}
+	.burger span {
+		background-color: white;
+	}
+}
+
+@media print {
+	.card img {
+		display: none;
+	}
+}
